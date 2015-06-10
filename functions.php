@@ -121,9 +121,7 @@ function sj_dashboard_widget() {
 
 	define( 'DOING_AJAX', true );
 
-	//wp_dashboard_cached_rss_widget( 'dashboard_slicejack', 'sj_dashboard_widget_output', $feed );
-
-	sj_dashboard_widget_output( 'dashboard_slicejack', $feed );
+	wp_dashboard_cached_rss_widget( 'dashboard_slicejack', 'sj_dashboard_widget_output', $feed );
 }
 
 /**
