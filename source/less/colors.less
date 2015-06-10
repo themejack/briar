@@ -1,0 +1,229 @@
+/* Anchor color */
+a{
+	&:hover, &:focus{
+		color: @primary-color;
+	}
+}
+
+/* Header */
+.header{
+	border-top-color: @primary-color;
+}
+
+.header--borders:before, .header--borders:after{
+	background-color: @primary-color;
+}
+
+.header--transparent{
+	.header__logo-link{
+		background-color: @primary-color;
+
+		&:hover, &:focus{
+			color: @primary-color;
+		}
+	}
+}
+
+
+/* Menu */
+.main-nav{
+	.menu-item-has-children{
+		> .dropdown-nav__link{
+			border-bottom-color: @primary-color;
+
+			&:focus{
+				border-color: @primary-color;
+			}
+		}
+	}
+}
+.dropdown-nav{
+	background-color: @primary-color;
+}
+.dropdown-nav__toggle{
+	background-color: @primary-color;
+	border-color: @primary-color;
+
+	&:hover{
+		border-color: @primary-color;
+
+		span{
+			background: @primary-color;
+
+			&:after, &:before{
+				background: @primary-color;
+			}
+		}
+	}
+
+	&:focus{
+		&:hover{
+			span{
+				background: @primary-color;
+
+				&:after, &:before{
+					background: @primary-color;
+				}
+			}
+		}
+	}
+}
+
+/* Footer */
+.footer{
+	&:after{
+		background-color: @primary-color;
+	}
+}
+
+.footer__copyright{
+	a{
+		&:hover, &:focus{
+			color: @primary-color;
+		}
+	}
+}
+
+/* Logo */
+.btn--logo{
+	border-color: @primary-color;
+	color: @primary-color;
+
+	&:hover, &:focus{
+		background-color: @primary-color;
+	}
+}
+
+/* Read more */
+.btn--more-posts{
+	border-color: @primary-color;
+	color: @primary-color;
+
+	&:hover, &:focus{
+		background-color: @primary-color;
+	}
+}
+
+/* Anchor color */
+.post-item{
+	a{
+		color: @primary-color;
+
+		&:hover, &:focus{
+			border-bottom-color: @primary-color;
+		}
+	}
+}
+
+/* Comments button */
+.fixed-footer__btn--red{
+	background: @primary-color;
+
+	&:hover, &:focus{
+		background: lighten(@primary-color, 5%);
+	}
+}
+
+/* Comments submit button */
+.form-submit{
+	.submit{
+		background-color: @primary-color;
+	}
+}
+
+/* Title hover */
+.post-list{
+	.post-item__title{
+		a{
+			&:hover, &:focus{
+				color: @primary-color;
+			}
+		}
+	}
+}
+
+/* Older/newer buttons */
+.post-list-nav__prev,
+.post-list-nav__next{
+	a{
+		background-color: @primary-color;
+
+		&:hover, &:focus{
+			background-color: darken( @primary-color, 7% );
+		}
+	}
+}
+
+/* Anchor color */
+.error-message{
+	a{
+		color: @primary-color;
+
+		&:hover, &:focus{
+			border-bottom-color: @primary-color;
+		}
+	}
+}
+
+/* ----- Widgets ----- */
+/* Anchor color */
+.widget{
+	a{
+		&:hover, &:focus{
+			color: @primary-color;
+		}
+	}
+}
+
+/* Search button */
+.search-form__button{
+	background: @primary-color;
+
+	&:hover, &:focus{
+		background-color: darken( @primary-color, 7% );
+	}
+}
+
+/* ----- Post formats ----- */
+
+/* Audio */
+.mejs-controls .mejs-time-rail .mejs-time-loaded, .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current{
+	background-color: @primary-color !important;
+}
+
+/* Gallery arrows */
+.gallery-slider{
+	.slick-arrow{
+		&:before{
+			background-color: @primary-color;
+		}
+	}
+}
+
+/* Blog post pagination */
+.pagination{
+	li{
+		a{
+			background-color: @primary-color;
+
+			&:hover, &:focus{
+				background-color: lighten( @primary-color, 5% );
+			}
+		}
+	}
+
+	.current{
+		background-color: darken( @primary-color, 4% );
+	}
+}
+
+/* Password protected button */
+.post-password-form{
+	input[type="submit"]{
+		background-color: @primary-color;
+
+		&:hover, &:focus{
+			background-color: darken( @primary-color, 7% );
+		}
+	}
+}

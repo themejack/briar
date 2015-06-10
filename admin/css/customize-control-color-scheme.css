@@ -1,0 +1,61 @@
+.customize-control-color-scheme .selection .scheme {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	box-sizing: border-box;
+	opacity: 0.5;
+}
+.customize-control-color-scheme .selection .scheme.selected {
+	opacity: 1;
+}
+.customize-control-color-scheme .selection .scheme .color {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.customize-control-color-scheme .selection .scheme.selected .color {
+	box-shadow: inset rgba(0,0,0,.5) 0px 0px 5px 1px;
+	cursor: not-allowed;
+}
+
+.customize-control-color-scheme .scheme[data-value="custom"] .color {
+	overflow: hidden;
+}
+
+.customize-control-color-scheme .scheme[data-value="custom"] .color div {
+	float: left;
+	width: 33.33%;
+	height: 33.33%;
+	box-sizing: border-box;
+}
+
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c1 {
+	background: #f00;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c2 {
+	background: #fa0;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c3 {
+	background: #faa;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c4 {
+	background: #af0;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c5 {
+	background: #0f0;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c6 {
+	background: #afa;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c7 {
+	background: #a0f;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c8 {
+	background: #aaf;
+}
+.customize-control-color-scheme .scheme[data-value="custom"] .color .c9 {
+	background: #00f;
+}

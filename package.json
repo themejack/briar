@@ -1,0 +1,25 @@
+{
+  "name": "redmaple",
+  "version": "1.0.0",
+  "description": "Red Maple free WordPress theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:themejack/noname.git"
+  },
+  "author": "Themejack",
+  "license": "MIT",
+  "devDependencies": {
+    "browserslist": "^0.4.0",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.3",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglifyjs": "^0.6.2"
+  }
+}
