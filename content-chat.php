@@ -4,7 +4,7 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

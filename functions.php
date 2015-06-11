@@ -1,8 +1,8 @@
 <?php
 /**
- * Red Maple functions and definitions
+ * Briar functions and definitions
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 
@@ -23,7 +23,7 @@ function sj_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Red Maple, use a find and replace
+	 * If you're building a theme based on Briar, use a find and replace
 	 * to change 'sj' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'sj', get_template_directory() . '/languages' );

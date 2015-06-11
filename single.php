@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

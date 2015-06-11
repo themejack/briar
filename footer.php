@@ -3,7 +3,7 @@
  * The template for displaying the footer.
  *
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
  ?>

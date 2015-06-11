@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 ?>

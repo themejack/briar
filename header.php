@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div class="page-content">
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 ?><!DOCTYPE html>

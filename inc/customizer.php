@@ -1,13 +1,13 @@
 <?php
 /**
- * Red Maple Theme Customizer
+ * Briar Theme Customizer
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 
 /**
- * Red Maple Theme custom options
+ * Briar Theme custom options
  *
  * @since 1.0
  *

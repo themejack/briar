@@ -2,7 +2,7 @@
 /**
  * The home/blog template file.
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

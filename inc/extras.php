@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

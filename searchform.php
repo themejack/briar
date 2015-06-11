@@ -2,7 +2,7 @@
 /**
  * Search form.
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
  ?>

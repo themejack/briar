@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 ?>

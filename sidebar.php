@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

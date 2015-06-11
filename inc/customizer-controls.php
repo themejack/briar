@@ -1,15 +1,15 @@
 <?php
 /**
- * Red Maple Theme Customizer Controls
+ * Briar Theme Customizer Controls
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 
 /**
  * Customize Layout Control Class
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 class sj_Layout_Control extends WP_Customize_Control {
@@ -106,7 +106,7 @@ class sj_Layout_Control extends WP_Customize_Control {
 /**
  * Customize Color Scheme Control Class
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 class sj_Color_Scheme_Control extends WP_Customize_Control {
@@ -219,7 +219,7 @@ class sj_Color_Scheme_Control extends WP_Customize_Control {
 /**
  * Customize Social Buttons Control Class
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 class sj_Social_Buttons_Control extends WP_Customize_Control {

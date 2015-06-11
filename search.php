@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

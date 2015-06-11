@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

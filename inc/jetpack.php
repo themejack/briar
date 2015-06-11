@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

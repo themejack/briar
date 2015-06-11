@@ -3,7 +3,7 @@
  * Custom template tags for this theme.
  *
  *
- * @package Red Maple
+ * @package Briar
  * @since 1.0
  */
 

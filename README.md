@@ -1,8 +1,8 @@
-![Red Maple](http://slicejack.com/shared/red-maple-featured.png "Red Maple")
+![Briar](http://slicejack.com/shared/briar-featured.png "Briar")
 
 # Installation
 ---------------
-Installing this theme is pretty easy. After download you should have a redmaple.zip (compressed file with all folders and files of this theme).
+Installing this theme is pretty easy. After download you should have a briar.zip (compressed file with all folders and files of this theme).
 
 ### Installation
 You can use WordPress Admin Panel to install this theme or do it manually.
@@ -11,20 +11,20 @@ You can use WordPress Admin Panel to install this theme or do it manually.
 1. Go to **Appearance > Themes**
 2. Click on **Add New**
 3. Click on **Upload Theme**
-4. Choose the `redmaple.zip` file
+4. Choose the `briar.zip` file
 5. Click on **Install Now**
 
 ###### Manually ( FTP )
 
-1. Exctract the `redmaple.zip`
-2. Using an FTP client or Control Panel to access your host web server and upload `redmaple` folder to the `wp-content/themes`
+1. Exctract the `briar.zip`
+2. Using an FTP client or Control Panel to access your host web server and upload `briar` folder to the `wp-content/themes`
 
 
 #### Activate the theme
 After installation you can click on **Activate** or:
 
 1. Go to **Appearance > Themes**
-2. Hover over the **Red Maple** screenshot and click on **Activate**
+2. Hover over the **Briar** screenshot and click on **Activate**
 
 
 # Adapting existing content
@@ -82,6 +82,6 @@ In this theme we are using a default [WordPress template hierarchy](http://codex
 
 **/source/** - Source less and javascript files.
 
-[![Slicejack](http://slicejack.com/shared/red-maple-footer.png "Slicejack")](http://slicejack.com "Slicejack")
+[![Slicejack](http://slicejack.com/shared/briar-footer.png "Slicejack")](http://slicejack.com "Slicejack")
 
 

@@ -1,14 +1,14 @@
 {
-  "name": "redmaple",
+  "name": "briar",
   "version": "1.0.0",
-  "description": "Red Maple free WordPress theme",
+  "description": "Briar, minimalist free WordPress theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:themejack/noname.git"
+    "url": "https://github.com/themejack/briar.git"
   },
   "author": "Themejack",
   "license": "MIT",
