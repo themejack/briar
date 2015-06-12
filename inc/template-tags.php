@@ -82,13 +82,21 @@ function sj_social_icons( $sj_footer_social_buttons = false ) {
 			'vimeo' => __( 'Vimeo', 'sj' ),
 			'behance' => __( 'Behance', 'sj' )
 		);
+		$fa_classes = array(
+			'googleplus' => 'fa-google-plus',
+			'vimeo' => 'fa-vimeo-square'
+		)
 	?>
 	<ul class="social-nav">
 	<?php
 		foreach( $sj_footer_social_buttons as $social_button ) :
 			if ( isset( $social_button['css_class'] ) && isset( $social_button['url'] ) && isset( $social_button['social'] ) ) :
 		?>
-		<li class="<?php echo $social_button['css_class']; ?>-ico social-nav__item btn--transition"><a class="social-nav__link" href="<?php echo esc_url( $social_button['url'] ); ?>" title="<?php echo esc_attr( isset( $social_buttons_default_titles[ $social_button['social'] ] ) ? $social_buttons_default_titles[ $social_button['social'] ] : $social_button['social'] ); ?>" target="_blank"><i class="fa fa-<?php echo strtolower( $social_button['social'] ); ?>"></i></a></li>
+		<li class="<?php echo $social_button['css_class']; ?>-ico social-nav__item btn--transition">
+			<a class="social-nav__link" href="<?php echo esc_url( $social_button['url'] ); ?>" title="<?php echo esc_attr( isset( $social_buttons_default_titles[ $social_button['social'] ] ) ? $social_buttons_default_titles[ $social_button['social'] ] : $social_button['social'] ); ?>" target="_blank">
+				<i class="fa <?php if ( isset( $fa_classes[ strtolower( $social_button['social'] ) ] ) ) : echo $fa_classes[ strtolower( $social_button['social'] ) ]; else : ?>fa-<?php echo strtolower( $social_button['social'] ); endif; ?>"></i>
+			</a>
+		</li>
 		<?php
 			endif;
 		endforeach;
