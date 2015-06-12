@@ -22,11 +22,6 @@
             },
             {
                 "files": [
-                    "source/less/style-default.less"
-                ]
-            },
-            {
-                "files": [
                     "source/less/style-orange.less"
                 ]
             },
@@ -54,10 +49,6 @@
         "dest": [
             {
                 "dir": "css/",
-                "name": "style"
-            },
-            {
-                "dir": "html/public/css/",
                 "name": "style"
             },
             {
