@@ -8156,7 +8156,8 @@ table td {
   text-decoration: none;
 }
 .comment-reply-title {
-  margin: 0;
+  margin: 0 0 5px 0;
+  font-size: 17px;
 }
 .comment-metadata {
   font-size: 15px;
@@ -8201,6 +8202,19 @@ table td {
 }
 .form-allowed-tags {
   display: none;
+}
+.comment-form p,
+.comment-form span {
+  font-family: 'Martel', serif;
+  font-size: 15px;
+}
+.comment-form label {
+  display: block;
+}
+.comment-form input {
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  padding: 5px 15px;
 }
 /* Full width heading */
 .full-heading {
