@@ -2793,10 +2793,10 @@
 	 * Headings
 	 */
 	$( document ).on( 'load_sj_headings', function() {
-		var $post_item = $( '.post-item' );
+		var $post_item = $( 'body' ).hasClass( 'single' ) || $( 'body' ).hasClass( 'page' ) ? $( '.post-item' ) : $( '#content' );
 		var $post_item_offset = $post_item.offset();
         var $wrapper = $post_item.parent( 'div' );
-        var is_full_width = $wrapper.hasClass( 'col-lg-8' ) ? true : false;
+        var is_full_width = $wrapper.hasClass( 'col-md-8' ) ? false : true;
         var $window_width = $( window ).width();
         var $window_height = $( window ).height();
 
@@ -2829,7 +2829,7 @@
 
 			sj_headings_handle_resize_timeout = setTimeout( function() {
                 $post_item_offset = $post_item.offset();
-                is_full_width = $wrapper.hasClass( 'col-lg-8' ) ? true : false;
+                is_full_width = $wrapper.hasClass( 'col-md-8' ) ? false : true;
                 $window_width = $( window ).width();
 				$window_height = $( window ).height();
 
