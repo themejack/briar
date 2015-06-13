@@ -2795,9 +2795,14 @@
 	$( document ).on( 'load_sj_headings', function() {
 		var $post_item = $( '.post-item' );
 		var $post_item_offset = $post_item.offset();
-		var $wrapper = $post_item.parent( 'div' );
-		var is_full_width = $wrapper.hasClass( 'col-lg-8' ) ? true : false;
-		var $window_height = $( window ).height();
+        var $wrapper = $post_item.parent( 'div' );
+        var is_full_width = $wrapper.hasClass( 'col-lg-8' ) ? true : false;
+        var $window_width = $( window ).width();
+        var $window_height = $( window ).height();
+
+        var is_left_sidebar = null;
+        if ( ! is_full_width )
+            is_left_sidebar = $wrapper.hasClass( 'col-md-push-4' ) ? true : false;
 
 		var sj_headings = window.sj_headings;
 		for ( var i = 0, l = sj_headings.length; i < l; i++ ) {
@@ -2823,14 +2828,22 @@
 				clearTimeout( sj_headings_handle_resize_timeout );
 
 			sj_headings_handle_resize_timeout = setTimeout( function() {
-				$post_item_offset = $post_item.offset();
+                $post_item_offset = $post_item.offset();
+                is_full_width = $wrapper.hasClass( 'col-lg-8' ) ? true : false;
+                $window_width = $( window ).width();
 				$window_height = $( window ).height();
-				var $window_width = $( window ).width();
+
+                is_left_sidebar = null;
+                if ( ! is_full_width )
+                    is_left_sidebar = $wrapper.hasClass( 'col-md-push-4' ) ? true : false;
+
+                var new_width = is_full_width ? $window_width : ( is_left_sidebar ? $window_width - $post_item_offset.left : $post_item_offset.left + $post_item.width() );
+                var max_width = new_width;
 
 				for ( var i = 0, l = sj_headings.length; i < l; i++ ) {
 					sj_headings[i].$bg.css( {
-						'left': '-' + $post_item_offset.left + 'px',
-						'width': $( window ).width()
+						'left': ( is_full_width || is_left_sidebar == false ? '-' + $post_item_offset.left : 0 ) + 'px',
+						'width': new_width + 'px'
 					} );
 
 					sj_headings[i].parallaxPoints = {
@@ -2849,7 +2862,6 @@
 					var $img_width = parseInt( sj_headings[i].background[1] );
 					var $img_height = parseInt( sj_headings[i].background[2] );
 
-					var new_width = $window_width;
 					var new_height = parseInt( $img_height * new_width / $img_width );
 
 					if ( new_height < ( sj_headings[i].parallaxPoints.height + 100 ) ) {
@@ -2866,7 +2878,7 @@
 					if ( new_width > $window_width )
 						sj_headings[i].$bg_img_wrapper.css( {
 							'width': new_width + 'px',
-							'left': ( $window_width - new_width ) / 2 + 'px'
+							'left': ( max_width - new_width ) / 2 + 'px'
 						} );
 				}
 			}, 250 );

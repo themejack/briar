@@ -117,6 +117,8 @@
 				$sidebar.addClass( 'col-md-pull-8' );
 			}
 		}
+
+		$( window ).trigger( 'resize' );
 	};
 
 	var handle_layout_change = function( value ) {
