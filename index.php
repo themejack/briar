@@ -14,26 +14,29 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
+	<div class="post-list">
+		<div class="container">
+			<div class="row">
+				<div class="<?php sj_main_class(); ?>" id="content">
+				<?php if ( have_posts() ) : ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+						<div class="row">
+							<?php
+								get_template_part( 'content', get_post_format() );
+							?>
+						</div>
+					<?php endwhile; ?>
+					<?php sj_pagination(); ?>
+				<?php else : ?>
+					<div class="row">
+						<?php get_template_part( 'content', 'none' ); ?>
+					</div>
+				<?php endif; ?>
+				</div>
 
-	<div id="content">
-
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php
-				get_template_part( 'content', get_post_format() );
-			?>
-
-		<?php endwhile; ?>
-
+				<?php get_sidebar(); ?>
+			</div>
+		</div>
 	</div>
 
-	<?php sj_pagination(); ?>
-
-<?php else : ?>
-
-	<?php get_template_part( 'content', 'none' ); ?>
-
-<?php endif; ?>
-
-<?php get_footer(); ?>
+<?php get_footer();
