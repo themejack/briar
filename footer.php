@@ -23,7 +23,7 @@
 				<div class="col-md-12">
 			<?php endif; ?>
 					<div class="footer__copyright">
-						<p><?php printf( __( '%1$s @ Copyright %2$s. - Created by %3$s', 'sj' ), get_bloginfo( 'name' ), date('Y'), '<a href="http://slicejack.com" rel="designer">SliceJack</a>' ); ?></p>
+						<p><?php printf( __( '%1$s @ Copyright %2$s. - Created by %3$s', 'sj' ), get_bloginfo( 'name' ), date('Y'), '<a href="http://slicejack.com" title="WordPress Development Agency" rel="designer">SliceJack</a>' ); ?></p>
 					</div><!-- /.copyright -->
 				</div><!-- /.col -->
 			</div><!-- /.row -->
