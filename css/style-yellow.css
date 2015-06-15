@@ -5,8 +5,6 @@
  */
 /* FONT PATH
  * -------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Martel:400,300,700,900&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext);
 @font-face {
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
@@ -7252,7 +7250,6 @@ tbody.collapse.in {
   -webkit-transition: none !important;
           transition: none !important;
 }
-/* Fonts */
 /* Text */
 h1,
 h2,

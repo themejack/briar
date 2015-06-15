@@ -321,6 +321,33 @@ function is_customize_preview() {
 endif;
 
 /**
+ * Import fonts
+ */
+function sj_fonts() { ?>
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: {
+				families: [ 'Noto+Sans:400,700,400italic,700italic:latin,latin-ext', 'Martel:400,300,700,900:latin,latin-ext' ]
+			},
+			active: function() {
+				document.dispatchEvent( new Event( 'resize' ) );
+			}
+		};
+
+		( function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		} )();
+	</script>
+<?php
+}
+add_action( 'wp_head', 'sj_fonts', 0 );
+
+/**
  * Add custom style
  */
 function sj_custom_style() {
