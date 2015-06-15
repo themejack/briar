@@ -82,9 +82,9 @@ In this theme we are using a default [WordPress template hierarchy](http://codex
 
 **/source/** - Source less and javascript files.
 
-[![Slicejack](http://slicejack.com/shared/briar-footer.png "Slicejack")](http://slicejack.com "Slicejack")
-
 ## License
 
 All contents of this theme are licensed under the [MIT license](https://github.com/themejack/briar/blob/master/LICENSE), except FitVids which is licensed under the [WTFPL license](http://sam.zoy.org/wtfpl/).
+
+[![Slicejack](http://slicejack.com/shared/briar-footer.png "Slicejack")](http://slicejack.com "Slicejack")
 
