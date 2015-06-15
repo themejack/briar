@@ -7481,7 +7481,7 @@ table td {
 .dropdown-nav__link:focus {
   text-decoration: none;
   color: #fff;
-  padding: 0 0 3px 0;
+  padding: 0 0 2px 0;
 }
 .dropdown-nav__toggle {
   position: relative;
@@ -8097,6 +8097,9 @@ table td {
   margin: 0 15px 0 0;
 }
 /* Single comments */
+.single-comments {
+  margin: 40px 0 0 0;
+}
 .comments-area ol {
   list-style: none;
   padding: 0;
@@ -8386,6 +8389,7 @@ table td {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   overflow: hidden;
+  margin: 30px 0 0 0;
 }
 .post-list-nav__prev a,
 .post-list-nav__next a {
@@ -8406,6 +8410,7 @@ table td {
 .post-list-nav__prev a:focus,
 .post-list-nav__next a:focus {
   text-decoration: none;
+  color: #fff;
 }
 .post-list-nav__prev {
   float: left;

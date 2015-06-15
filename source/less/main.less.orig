@@ -66,6 +66,15 @@
 	transition: none !important;
 }
 
+<<<<<<< HEAD
+=======
+/* Fonts */
+/*
+@import url(http://fonts.googleapis.com/css?family=Martel:400,300,700,900&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic&subset=latin,latin-ext);
+*/
+
+>>>>>>> origin/alen-dev
 /* Text */
 h1, h2, h3, h4, h5, h6, span, a, figcaption, input{
 	font-family: 'Noto sans', sans-serif;
