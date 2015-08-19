@@ -20,9 +20,8 @@ get_header(); ?>
 
 	<div class="container">
 		<div class="row">
-		<?php $main_classes = sj_main_class( false ); ?>
-			<div class="<?php echo join( ' ', $main_classes ); ?>">
-				<div class="post-list" id="content">
+			<div class="<?php briar_main_class(); ?>">
+				<div class="post-list" id="content" role="main">
 				<?php
 					$sticky_posts = get_option( 'sticky_posts' );
 					$sticky_post_id = ! empty( $sticky_posts ) ? $sticky_posts[0] : 0;
@@ -35,7 +34,7 @@ get_header(); ?>
 							if ( strlen( $content ) > 140 )
 								$content = substr( $content, 0, 140 ) . '...'; ?>
 					<div class="row">
-						<div <?php post_class( array( 'post-item', 'post-item--featured', 'clearfix' ), $sticky_post_id ); ?>>
+						<div <?php post_class( array( 'post-item', 'clearfix' ), $sticky_post_id ); ?>>
 							<div class="col-lg-12">
 								<a href="<?php echo $permalink; ?>">
 									<div class="post-item__img"<?php if ( ! empty( $image_url ) ) : ?> style="background-image: url(<?php echo $image_url[0]; ?>);"<?php endif; ?>>
@@ -47,7 +46,7 @@ get_header(); ?>
 
 											<p><?php echo $content; ?></p>
 
-											<div class="post-item__btn btn--transition"><?php _e( 'Read more', 'sj' ); ?></div>
+											<?php printf( '<div class="post-item__btn btn--transition">%s</div>', sprintf( __( 'Read more%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ) ); ?>
 											<?php endif; ?>
 										</div><!-- /.content -->
 									</div>
@@ -64,7 +63,7 @@ get_header(); ?>
 						?>
 					<?php endwhile; ?>
 
-					<?php sj_pagination(); ?>
+					<?php briar_pagination(); ?>
 				<?php else : ?>
 					<?php get_template_part( 'content', 'none' ); ?>
 				<?php endif; ?>

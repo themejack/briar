@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-$sidebar_classes = sj_sidebar_class();
+$sidebar_classes = briar_sidebar_class();
 
 if ( ! is_active_sidebar( 'sidebar-1' ) || $sidebar_classes == false ) {
 	return;
@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) || $sidebar_classes == false ) {
 ?>
 
 <div class="<?php echo join( ' ', $sidebar_classes ); ?>">
-	<div class="page-content__sidebar">
+	<div class="page-content__sidebar" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 </div>

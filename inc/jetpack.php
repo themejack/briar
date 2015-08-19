@@ -13,7 +13,7 @@
  *
  * @since 1.0
  */
-function sj_jetpack_setup() {
+function briar_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'type' => 'click',
 		'container' => 'content',
@@ -22,4 +22,4 @@ function sj_jetpack_setup() {
 		'click_handle' => false
 	) );
 }
-add_action( 'after_setup_theme', 'sj_jetpack_setup' );
+add_action( 'after_setup_theme', 'briar_jetpack_setup' );

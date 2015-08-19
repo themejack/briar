@@ -9,8 +9,8 @@
  * @param  array $atts    Attributes
  * @param  string $content Content
  */
-function sj_heading( $atts , $content = null ) {
-	global $sj_headings;
+function briar_heading( $atts , $content = null ) {
+	global $briar_headings;
 
 	// Attributes
 	extract( shortcode_atts(
@@ -19,7 +19,7 @@ function sj_heading( $atts , $content = null ) {
 		), $atts )
 	);
 
-	$id = 'sj-heading-' . count( $sj_headings );
+	$id = 'briar-heading-' . count( $briar_headings );
 	$content = $content != null & ! empty( $content ) ? $content : '';
 
 	$content = preg_replace( '/^\<br(\s+\/)?\>\s+/', '', $content );
@@ -27,7 +27,7 @@ function sj_heading( $atts , $content = null ) {
 	if ( $background !== null )
 		$background = wp_get_attachment_image_src( $background, 'single-full-width' );
 
-	$sj_headings[] = array(
+	$briar_headings[] = array(
 		'id' => $id,
 		'background' => $background,
 		'content' => $content
@@ -46,24 +46,24 @@ function sj_heading( $atts , $content = null ) {
 		</div><!-- /.content -->
 	</div><!-- /.full heading -->';
 }
-add_shortcode( 'heading', 'sj_heading' );
+add_shortcode( 'heading', 'briar_heading' );
 
-function sj_heading_filters() {
+function briar_heading_filters() {
 	if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) return;
 
 	if ( 'true' == get_user_option( 'rich_editing' ) ) {
-		add_filter( 'mce_external_plugins', 'sj_heading_external_plugins' );
-		add_filter( 'mce_buttons', 'sj_heading_mce_buttons' );
+		add_filter( 'mce_external_plugins', 'briar_heading_external_plugins' );
+		add_filter( 'mce_buttons', 'briar_heading_mce_buttons' );
 	}
 }
-add_action( 'admin_head', 'sj_heading_filters' );
+add_action( 'admin_head', 'briar_heading_filters' );
 
-function sj_heading_external_plugins( $plugin_array ) {
-	$plugin_array['sj_heading'] = get_template_directory_uri() .'/admin/js/tinymce-sj-heading.js';
+function briar_heading_external_plugins( $plugin_array ) {
+	$plugin_array['briar_heading'] = get_template_directory_uri() .'/admin/js/tinymce-briar-heading.js';
 	return $plugin_array;
 }
 
-function sj_heading_mce_buttons( $buttons ) {
-	array_push( $buttons, 'sj_heading' );
+function briar_heading_mce_buttons( $buttons ) {
+	array_push( $buttons, 'briar_heading' );
 	return $buttons;
 }

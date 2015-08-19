@@ -14,15 +14,15 @@ if ( ! is_singular() ) : ?>
 	<div <?php post_class( array( 'post-item', 'clearfix' ) ); ?>>
 		<div class="col-sm-12">
 		<?php
-			if ( ! is_singular() ) {
-				the_title( sprintf( '<h3 class="post-item__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
-				the_content( __( 'Read more', 'sj' ) );
-				edit_post_link( __( 'Edit', 'sj' ), '<span class="edit-link">', '</span>' );
-			}
-			else {
+			if ( ! is_singular() )
+				the_title( sprintf( '<h1 class="post-item__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
+			else
 				the_title( '<h3 class="post-item__title">', '</h3>' );
-				the_content();
-			}
+
+			the_content( sprintf( __( 'Read more%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ) );
+
+			if ( ! is_singular() )
+				edit_post_link( sprintf( __( 'Edit%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ), '<span class="edit-link">', '</span>' );
 			?>
 		</div><!-- /.col -->
 	</div><!-- /.news-block -->

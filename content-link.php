@@ -16,15 +16,15 @@ if ( ! is_singular() ) : ?>
 	<div <?php post_class( array( 'post-item', 'clearfix' ) ); ?>>
 		<?php
 			if ( ! is_singular() )
-				sj_post_thumbnail();
+				briar_post_thumbnail();
 		?>
 		<?php if ( ! is_singular() ) : ?>
 		<div class="<?php if ( has_post_thumbnail() ) : ?>col-sm-8<?php else : ?>col-sm-12<?php endif; ?>">
 		<?php endif;
-			printf( '<h3 class="post-item__title">%s</h3>', apply_filters( 'the_content', $post->post_content ) );
+			printf( '<h1 class="post-item__title">%s</h1>', apply_filters( 'the_content', $post->post_content ) );
 
 			if ( ! is_singular() )
-				edit_post_link( __( 'Edit', 'sj' ), '<span class="edit-link">', '</span>' );
+				edit_post_link( sprintf( __( 'Edit%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ), '<span class="edit-link">', '</span>' );
 		?>
 		<?php if ( ! is_singular() ) : ?>
 		</div><!-- /.col -->

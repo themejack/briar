@@ -10,13 +10,13 @@ get_header(); ?>
 
 	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="hero-subheader">
-		<?php sj_post_thumbnail(); ?>
+		<?php briar_post_thumbnail(); ?>
 
 		<div class="hero-subheader__content">
 			<div class="outer">
 				<div class="middle">
 					<div class="inner">
-						<?php the_title( '<h2>', '</h2>' ); ?>
+						<?php the_title( '<h1>', '</h1>' ); ?>
 					</div><!-- /.inner -->
 				</div><!-- /.middle -->
 			</div><!-- /.outer -->
@@ -28,11 +28,11 @@ get_header(); ?>
 	<div class="post-single">
 		<div class="container">
 			<div class="row">
-				<div class="<?php sj_main_class(); ?>">
+				<div class="<?php briar_main_class(); ?>">
 
 					<?php get_template_part( 'content', get_post_format() ); ?>
 
-					<?php sj_link_pages(); ?>
+					<?php briar_link_pages(); ?>
 
 					<div id="fixed-footer-trigger"></div>
 
@@ -50,22 +50,22 @@ get_header(); ?>
 
 					<?php
 						/* translators: used between list items, there is a space after the comma */
-						$categories_list = get_the_category_list( __( ', ', 'sj' ) );
+						$categories_list = get_the_category_list( __( ', ', 'briar' ) );
 						if ( $categories_list ) :
 					?>
 					<div class="cat-box">
 						<p class="category-list">
-							<?php printf( __( '%1$s', 'sj' ), $categories_list ); ?>
+							<?php printf( __( '%1$s', 'briar' ), $categories_list ); ?>
 						</p>
 					</div>
 					<?php endif;
 						/* translators: used between list items, there is a space after the comma */
-						$tags_list = get_the_tag_list( '', __( ', ', 'sj' ) );
+						$tags_list = get_the_tag_list( '', __( ', ', 'briar' ) );
 						if ( $tags_list ) :
 					?>
 					<div class="cat-box">
 						<p class="tags-list">
-							<?php printf( __( '%1$s', 'sj' ), $tags_list ); ?>
+							<?php printf( __( '%1$s', 'briar' ), $tags_list ); ?>
 						</p>
 					</div>
 					<?php endif; ?>

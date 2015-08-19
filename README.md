@@ -84,7 +84,7 @@ In this theme we are using a default [WordPress template hierarchy](http://codex
 
 ## License
 
-All contents of this theme are licensed under the [MIT license](https://github.com/themejack/briar/blob/master/LICENSE), except FitVids which is licensed under the [WTFPL license](http://sam.zoy.org/wtfpl/).
+All contents of this theme are licensed under the [MIT license](https://github.com/themejack/briar/blob/master/LICENSE), except FitVids which is licensed under the [WTFPL license](http://sam.zoy.org/wtfpl/) and FontAwesome which is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL).
 
 [![Slicejack](http://slicejack.com/shared/briar-footer.png "Slicejack")](http://slicejack.com "Slicejack")
 

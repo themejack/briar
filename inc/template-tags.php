@@ -7,29 +7,29 @@
  * @since 1.0
  */
 
-if ( ! function_exists( 'sj_header' ) ) :
+if ( ! function_exists( 'briar_header' ) ) :
 /**
  * Display title and tagline or logo.
  *
  * @since 1.0
  */
-function sj_header() {
-	$sj_header = get_theme_mod( 'sj_header', 'title' );
+function briar_header() {
+	$briar_header = get_theme_mod( 'briar_header', 'title' );
 
-	$sj_header_logo_default = get_template_directory_uri() . '/img/themejack.png';
-	$sj_header_logo = get_theme_mod( 'sj_header_logo' );
-	if ( empty( $sj_header_logo ) )
-		$sj_header_logo = $sj_header_logo_default;
+	$briar_header_logo_default = get_template_directory_uri() . '/img/themejack.png';
+	$briar_header_logo = get_theme_mod( 'briar_header_logo' );
+	if ( empty( $briar_header_logo ) )
+		$briar_header_logo = $briar_header_logo_default;
 
-	if ( $sj_header == 'title' || is_customize_preview() ) : ?>
+	if ( $briar_header == 'title' || is_customize_preview() ) : ?>
 		<h1 class="header__logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo-link btn--transition btn--logo site-title"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 	<?php endif; ?>
-	<?php if ( $sj_header == 'logo' || is_customize_preview() ) : ?>
+	<?php if ( $briar_header == 'logo' || is_customize_preview() ) : ?>
 		<h1 class="header__logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo-link site-logo">
-				<img class="header-logo__image" src="<?php echo $sj_header_logo; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
+				<img class="header-logo__image" src="<?php echo $briar_header_logo; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
 				<?php if ( is_customize_preview() ) : ?>
-				<img class="header-logo__image default" src="<?php echo $sj_header_logo_default; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" style="display: none" />
+				<img class="header-logo__image default" src="<?php echo $briar_header_logo_default; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" style="display: none" />
 				<?php endif; ?>
 			</a>
 		</h1>
@@ -38,14 +38,14 @@ function sj_header() {
 }
 endif;
 
-if ( ! function_exists( 'sj_get_social_icons' ) ) :
+if ( ! function_exists( 'briar_get_social_icons' ) ) :
 /**
  * Get social icons.
  *
  * @since 1.0
  */
-function sj_get_social_icons() {
-	return get_theme_mod( 'sj_footer_social_buttons', array(
+function briar_get_social_icons() {
+	return get_theme_mod( 'briar_footer_social_buttons', array(
 			array( 'social' => 'facebook', 'url' => '#', 'css_class' => 'facebook' ),
 			array( 'social' => 'twitter', 'url' => '#', 'css_class' => 'twitter' ),
 			array( 'social' => 'linkedin', 'url' => '#', 'css_class' => 'linkedin' )
@@ -55,32 +55,32 @@ function sj_get_social_icons() {
 
 endif;
 
-if ( ! function_exists( 'sj_social_icons' ) ) :
+if ( ! function_exists( 'briar_social_icons' ) ) :
 /**
  * Display social icons.
  *
  * @since 1.0
  */
-function sj_social_icons( $sj_footer_social_buttons = false ) {
-	if ( $sj_footer_social_buttons == false )
-		$sj_footer_social_buttons = sj_get_social_icons();
+function briar_social_icons( $briar_footer_social_buttons = false ) {
+	if ( $briar_footer_social_buttons == false )
+		$briar_footer_social_buttons = briar_get_social_icons();
 
-	if ( ! empty( $sj_footer_social_buttons ) ) :
+	if ( ! empty( $briar_footer_social_buttons ) ) :
 		$social_buttons_default_titles = array(
-			'facebook' => __( 'Facebook', 'sj' ),
-			'twitter' => __( 'Twitter', 'sj' ),
-			'linkedin' => __( 'LinkedIn', 'sj' ),
-			'dribbble' => __( 'Dribbble', 'sj' ),
-			'flickr' => __( 'Flickr', 'sj' ),
-			'github' => __( 'GitHub', 'sj' ),
-			'googleplus' => __( 'Google+', 'sj' ),
-			'instagram' => __( 'Instagram', 'sj' ),
-			'pinterest' => __( 'Pinterest', 'sj' ),
-			'stumbleupon' => __( 'StumbleUpon', 'sj' ),
-			'skype' => __( 'Skype', 'sj' ),
-			'tumblr' => __( 'Tumblr', 'sj' ),
-			'vimeo' => __( 'Vimeo', 'sj' ),
-			'behance' => __( 'Behance', 'sj' )
+			'facebook' => __( 'Facebook', 'briar' ),
+			'twitter' => __( 'Twitter', 'briar' ),
+			'linkedin' => __( 'LinkedIn', 'briar' ),
+			'dribbble' => __( 'Dribbble', 'briar' ),
+			'flickr' => __( 'Flickr', 'briar' ),
+			'github' => __( 'GitHub', 'briar' ),
+			'googleplus' => __( 'Google+', 'briar' ),
+			'instagram' => __( 'Instagram', 'briar' ),
+			'pinterest' => __( 'Pinterest', 'briar' ),
+			'stumbleupon' => __( 'StumbleUpon', 'briar' ),
+			'skype' => __( 'Skype', 'briar' ),
+			'tumblr' => __( 'Tumblr', 'briar' ),
+			'vimeo' => __( 'Vimeo', 'briar' ),
+			'behance' => __( 'Behance', 'briar' )
 		);
 		$fa_classes = array(
 			'googleplus' => 'fa-google-plus',
@@ -89,7 +89,7 @@ function sj_social_icons( $sj_footer_social_buttons = false ) {
 	?>
 	<ul class="social-nav">
 	<?php
-		foreach( $sj_footer_social_buttons as $social_button ) :
+		foreach( $briar_footer_social_buttons as $social_button ) :
 			if ( isset( $social_button['css_class'] ) && isset( $social_button['url'] ) && isset( $social_button['social'] ) ) :
 		?>
 		<li class="<?php echo $social_button['css_class']; ?>-ico social-nav__item btn--transition">
@@ -107,17 +107,17 @@ function sj_social_icons( $sj_footer_social_buttons = false ) {
 }
 endif;
 
-if ( ! function_exists( 'sj_pagination' ) ) :
+if ( ! function_exists( 'briar_pagination' ) ) :
 /**
  * Display pagination with previous and next arrows.
  *
  * @since 1.0
  */
-function sj_pagination() {
+function briar_pagination() {
 	global $wp_query, $post;
 
 	if ( is_single() ) {
-		sj_link_pages();
+		briar_link_pages();
 		return;
 	}
 
@@ -126,7 +126,7 @@ function sj_pagination() {
 	</div>
 	<div class="row">
 		<div class="col-lg-12">
-			<a class="btn--more-posts btn--transition" id="infinite-handle" href="javascript:void(null)" data-text="<?php esc_attr_e( 'Load more blog posts', 'sj' ); ?>" data-loading="<?php esc_attr_e( 'Loading...', 'sj' ); ?>"><?php _e( 'Load more blog posts', 'sj' ); ?></a>
+			<a class="btn--more-posts btn--transition" id="infinite-handle" href="javascript:void(null)" data-text="<?php esc_attr_e( 'Load more blog posts', 'briar' ); ?>" data-loading="<?php esc_attr_e( 'Loading...', 'briar' ); ?>"><?php _e( 'Load more blog posts', 'briar' ); ?></a>
 		</div><!-- /.col -->
 	</div><!-- /.row -->
 	<div>
@@ -140,17 +140,17 @@ function sj_pagination() {
 	?>
 	<div class="post-list-nav">
 		<div class="post-list-nav__prev">
-			<?php next_posts_link( __( 'Older posts', 'sj' ), $wp_query->max_num_pages ); ?>
+			<?php next_posts_link( __( 'Older posts', 'briar' ), $wp_query->max_num_pages ); ?>
 		</div>
 		<div class="post-list-nav__next">
-			<?php previous_posts_link( __( 'Newer posts', 'sj' ) ); ?>
+			<?php previous_posts_link( __( 'Newer posts', 'briar' ) ); ?>
 		</div>
 	</div>
 	<?php
 }
 endif;
 
-if ( ! function_exists( 'sj_link_pages' ) ) :
+if ( ! function_exists( 'briar_link_pages' ) ) :
 /**
  * The formatted output of a list of pages.
  *
@@ -159,7 +159,7 @@ if ( ! function_exists( 'sj_link_pages' ) ) :
  *
  * @since 1.0
  */
-function sj_link_pages() {
+function briar_link_pages() {
 	global $page, $numpages, $multipage, $more;
 
 	if ( $multipage ) {
@@ -190,13 +190,13 @@ function sj_link_pages() {
 }
 endif;
 
-if ( ! function_exists( 'sj_posted_on' ) ) :
+if ( ! function_exists( 'briar_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
  * @since 1.0
  */
-function sj_posted_on() {
+function briar_posted_on() {
 	$time_string = '<time datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf( $time_string,
@@ -209,7 +209,7 @@ function sj_posted_on() {
 	?>
 	<p>
 		<?php echo sprintf(
-			_x( '%2$s on %1$s', 'post date', 'sj' ),
+			_x( '%2$s on %1$s', 'post date', 'briar' ),
 			$time_string,
 			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>'
 		); ?>
@@ -218,59 +218,59 @@ function sj_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'sj_share_buttons') ) :
+if ( ! function_exists( 'briar_share_buttons') ) :
 /**
  * Display share buttons.
  * @param array $classes Optional, additional classes
  *
  * @since 1.0
  */
-function sj_share_buttons( $classes = array() ) {
+function briar_share_buttons( $classes = array() ) {
 	global $post;
 
-	$sj_share_buttons_on = get_theme_mod( 'sj_share_buttons_on', true );
-	$sj_share_buttons_via = get_theme_mod( 'sj_share_buttons_via', 'slicejack' );
-	$sj_share_buttons = get_theme_mod( 'sj_share_buttons', array( 'twitter', 'facebook', 'googleplus', 'pinterest', 'linkedin' ) );
-	$sj_share_buttons_home_on = get_theme_mod( 'sj_share_buttons_home_on', true );
-	$sj_share_buttons_archive_on = get_theme_mod( 'sj_share_buttons_archive_on', true );
-	$sj_share_buttons_search_on = get_theme_mod( 'sj_share_buttons_search_on', true );
-	$sj_share_buttons_single_top_on = get_theme_mod( 'sj_share_buttons_single_top_on', true );
-	$sj_share_buttons_single_bottom_on = get_theme_mod( 'sj_share_buttons_single_bottom_on', true );
+	$briar_share_buttons_on = get_theme_mod( 'briar_share_buttons_on', true );
+	$briar_share_buttons_via = get_theme_mod( 'briar_share_buttons_via', 'slicejack' );
+	$briar_share_buttons = get_theme_mod( 'briar_share_buttons', array( 'twitter', 'facebook', 'googleplus', 'pinterest', 'linkedin' ) );
+	$briar_share_buttons_home_on = get_theme_mod( 'briar_share_buttons_home_on', true );
+	$briar_share_buttons_archive_on = get_theme_mod( 'briar_share_buttons_archive_on', true );
+	$briar_share_buttons_search_on = get_theme_mod( 'briar_share_buttons_search_on', true );
+	$briar_share_buttons_single_top_on = get_theme_mod( 'briar_share_buttons_single_top_on', true );
+	$briar_share_buttons_single_bottom_on = get_theme_mod( 'briar_share_buttons_single_bottom_on', true );
 
-	if ( ( empty( $post->ID ) || empty( $sj_share_buttons_on ) || empty( $sj_share_buttons ) || ( is_home() && !$sj_share_buttons_home_on ) || ( is_archive() && !$sj_share_buttons_archive_on ) || ( is_search() && !$sj_share_buttons_search_on ) || ( is_single() && ( ( in_array( 'blog-post-share-links-top', $classes ) && !$sj_share_buttons_single_top_on ) || ( in_array( 'blog-post-share-links-bottom', $classes ) && !$sj_share_buttons_single_bottom_on ) ) ) ) && !is_customize_preview() ) return;
+	if ( ( empty( $post->ID ) || empty( $briar_share_buttons_on ) || empty( $briar_share_buttons ) || ( is_home() && !$briar_share_buttons_home_on ) || ( is_archive() && !$briar_share_buttons_archive_on ) || ( is_search() && !$briar_share_buttons_search_on ) || ( is_single() && ( ( in_array( 'blog-post-share-links-top', $classes ) && !$briar_share_buttons_single_top_on ) || ( in_array( 'blog-post-share-links-bottom', $classes ) && !$briar_share_buttons_single_bottom_on ) ) ) ) && !is_customize_preview() ) return;
 
-	wp_enqueue_script( 'sj-sharrre' );
+	wp_enqueue_script( 'briar-sharrre' );
 
-	array_unshift( $classes, 'sj-share-buttons' );
+	array_unshift( $classes, 'briar-share-buttons' );
 
 	$share_url = get_permalink( $post->ID );
 	$share_text = get_the_title( $post );
 	$share_media = has_post_thumbnail( $post->ID ) ? wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) : '';
 	$share_via = '';
-	if ( ! empty( $sj_share_buttons_via ) )
-		$share_via = $sj_share_buttons_via;
+	if ( ! empty( $briar_share_buttons_via ) )
+		$share_via = $briar_share_buttons_via;
 
 	$share_buttons = array(
-		'twitter' => __( 'Tweet', 'sj' ),
-		'facebook' => __( 'Like', 'sj' ),
-		'googleplus' => __( '+1', 'sj' ),
-		'pinterest' => __( 'Pin it', 'sj' ),
-		'linkedin' => __( 'Share on LinkedIn', 'sj' ),
-		'digg' => __( 'Digg it!', 'sj' ),
-		'delicious' => __( 'Share on Delicious', 'sj' ),
-		'stumbleupon' => __( 'Stumble', 'sj' )
+		'twitter' => __( 'Tweet', 'briar' ),
+		'facebook' => __( 'Like', 'briar' ),
+		'googleplus' => __( '+1', 'briar' ),
+		'pinterest' => __( 'Pin it', 'briar' ),
+		'linkedin' => __( 'Share on LinkedIn', 'briar' ),
+		'digg' => __( 'Digg it!', 'briar' ),
+		'delicious' => __( 'Share on Delicious', 'briar' ),
+		'stumbleupon' => __( 'Stumble', 'briar' )
 	);
 
 	$urlCurl = get_template_directory_uri() . '/inc/sharrre.php';
 
 	if ( is_customize_preview() )
-		$sj_share_buttons = array();
+		$briar_share_buttons = array();
 
 	?>
 	<div class="<?php echo join( ' ', $classes ); ?>" data-url="<?php echo esc_url( $share_url ); ?>" data-text="<?php echo esc_attr( $share_text ); ?>" data-media="<?php echo esc_url( $share_media ); ?>" data-urlcurl="<?php echo esc_url( $urlCurl ); ?>" data-via="<?php echo esc_attr( $share_via ); ?>">
-	<?php foreach ( $sj_share_buttons as $network ) :
+	<?php foreach ( $briar_share_buttons as $network ) :
 		if ( isset( $share_buttons[ $network ] ) ) : ?>
-		<div class="sj-share-button" data-network="<?php echo esc_attr( $network ); ?>" data-title="<?php echo esc_attr( $share_buttons[ $network ] ); ?>"><a class="box" href="javascript:void(null)"><div class="share-icon"></div><div class="count" href="javascript:void(null)">-</div></a></div>
+		<div class="briar-share-button" data-network="<?php echo esc_attr( $network ); ?>" data-title="<?php echo esc_attr( $share_buttons[ $network ] ); ?>"><a class="box" href="javascript:void(null)"><div class="share-icon"></div><div class="count" href="javascript:void(null)">-</div></a></div>
 		<?php endif;
 	endforeach; ?>
 	</div>
@@ -285,8 +285,8 @@ endif;
  *
  * @return bool
  */
-function sj_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'sj_categories' ) ) ) {
+function briar_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'briar_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -299,34 +299,34 @@ function sj_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'sj_categories', $all_the_cool_cats );
+		set_transient( 'briar_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so sj_categorized_blog should return true.
+		// This blog has more than 1 category so briar_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so sj_categorized_blog should return false.
+		// This blog has only 1 category so briar_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in sj_categorized_blog.
+ * Flush out the transients used in briar_categorized_blog.
  */
-function sj_category_transient_flusher() {
+function briar_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'sj_categories' );
+	delete_transient( 'briar_categories' );
 }
-add_action( 'edit_category', 'sj_category_transient_flusher' );
-add_action( 'save_post',     'sj_category_transient_flusher' );
+add_action( 'edit_category', 'briar_category_transient_flusher' );
+add_action( 'save_post',     'briar_category_transient_flusher' );
 
 /**
  * Display an optional post thumbnail or specific post format header.
  *
  * @since 1.0
  */
-function sj_post_thumbnail() {
+function briar_post_thumbnail() {
 	if ( post_password_required() || is_attachment() )
 		return;
 
@@ -353,9 +353,9 @@ function sj_post_thumbnail() {
  *
  * @since 1.0
  */
-function sj_post_content() {
+function briar_post_content() {
 	if ( has_post_thumbnail() && ! is_singular() ) {
-		global $main_classes;
+		$main_classes = briar_main_class( false );
 
 		$content = '';
 		if ( is_search() || is_archive() || ( has_excerpt() && ! is_singular() ) )
@@ -377,21 +377,16 @@ function sj_post_content() {
 
 		echo apply_filters( 'the_content', $content );
 
-		if ( $read_more ) : ?>
-		<p>
-			<a href="<?php the_permalink(); ?>" class="post-item__btn btn--transition"><?php _e( 'Read more', 'sj' ); ?></a>
-		</p>
-		<?php endif;
+		if ( $read_more ) {
+			printf( '<p><a href="%2$s" class="post-item__btn btn--transition">%1$s</a></p>', sprintf( __( 'Read more%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ), esc_url( get_permalink() ) );
+		}
 	}
 	else {
 		if ( ( has_excerpt() && ! is_singular() ) || ( 'audio' !== get_post_format() && 'video' !== get_post_format() && ( is_search() || is_archive() ) ) ) :
-			the_excerpt(); ?>
-		<p>
-			<a href="<?php the_permalink(); ?>" class="post-item__btn btn--transition"><?php _e( 'Read more', 'sj' ); ?></a>
-		</p>
-		<?php
+			the_excerpt();
+			printf( '<p><a href="%2$s" class="post-item__btn btn--transition">%1$s</a></p>', sprintf( __( 'Read more%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ), esc_url( get_permalink() ) );
 		else :
-			the_content( __( 'Read more', 'sj' ) );
+			the_content( sprintf( __( 'Read more%s', 'briar' ), '<span class="screen-reader-text"> ' . get_the_title() . '</span>' ) );
 		endif;
 	}
 }
@@ -401,6 +396,6 @@ function sj_post_content() {
  *
  * @since 1.0
  */
-function sj_parse_chat_content( $content ) {
+function briar_parse_chat_content( $content ) {
 	return preg_replace( '/([a-z0-9 ]*)(\:)/mi', '<span class="username">$1</span>', $content );
 }

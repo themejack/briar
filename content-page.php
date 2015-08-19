@@ -8,7 +8,7 @@
 ?>
 
 <div <?php post_class( array( 'post-item', 'clearfix' ) ); ?>>
-	<?php the_title( '<h3 class="post-item__title">', '</h3>' ); ?>
+	<?php the_title( '<h1 class="post-item__title">', '</h1>' ); ?>
 
 	<?php the_content(); ?>
 </div><!-- /.post-item -->

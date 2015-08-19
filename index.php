@@ -14,10 +14,10 @@
 
 get_header(); ?>
 
-	<div class="post-list">
-		<div class="container">
-			<div class="row">
-				<div class="<?php sj_main_class(); ?>" id="content">
+	<div class="container">
+		<div class="row">
+			<div class="<?php briar_main_class(); ?>">
+				<div class="post-list" id="content" role="main">
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 						<div class="row">
@@ -26,16 +26,16 @@ get_header(); ?>
 							?>
 						</div>
 					<?php endwhile; ?>
-					<?php sj_pagination(); ?>
+					<?php briar_pagination(); ?>
 				<?php else : ?>
 					<div class="row">
 						<?php get_template_part( 'content', 'none' ); ?>
 					</div>
 				<?php endif; ?>
 				</div>
-
-				<?php get_sidebar(); ?>
 			</div>
+
+			<?php get_sidebar(); ?>
 		</div>
 	</div>
 

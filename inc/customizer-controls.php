@@ -12,7 +12,7 @@
  * @package Briar
  * @since 1.0
  */
-class sj_Layout_Control extends WP_Customize_Control {
+class briar_Layout_Control extends WP_Customize_Control {
 	/**
 	 * @access public
 	 * @var string
@@ -109,7 +109,7 @@ class sj_Layout_Control extends WP_Customize_Control {
  * @package Briar
  * @since 1.0
  */
-class sj_Color_Scheme_Control extends WP_Customize_Control {
+class briar_Color_Scheme_Control extends WP_Customize_Control {
 	/**
 	 * @access public
 	 * @var string
@@ -209,7 +209,7 @@ class sj_Color_Scheme_Control extends WP_Customize_Control {
 			?>
 			--></div>
 			<div class="actions">
-				<a href="javascript:void(null)" class="button apply-scheme"><?php _e( 'Apply scheme', 'sj' ); ?></a>
+				<a href="javascript:void(null)" class="button apply-scheme"><?php _e( 'Apply scheme', 'briar' ); ?></a>
 			</div>
 		</div>
 		<?php
@@ -222,7 +222,7 @@ class sj_Color_Scheme_Control extends WP_Customize_Control {
  * @package Briar
  * @since 1.0
  */
-class sj_Social_Buttons_Control extends WP_Customize_Control {
+class briar_Social_Buttons_Control extends WP_Customize_Control {
 	/**
 	 * @access public
 	 * @var string
@@ -292,9 +292,9 @@ class sj_Social_Buttons_Control extends WP_Customize_Control {
 					#>
 					<div class="preview">
 						<div class="social-button-preview"><div class="social-icon<# if ( data.css_class ) { #> social-icons--{{ data.css_class }}<# } #>"></div><div class="social-value">{{ social_value }}</div></div>
-						<div class="reorder-button move-down"><?php _e( 'Move down', 'sj' ); ?></div>
-						<div class="reorder-button move-up"><?php _e( 'Move up', 'sj' ); ?></div>
-						<div class="remove-button"><?php _e( 'Remove', 'sj' ); ?></div>
+						<div class="reorder-button move-down"><?php _e( 'Move down', 'briar' ); ?></div>
+						<div class="reorder-button move-up"><?php _e( 'Move up', 'briar' ); ?></div>
+						<div class="remove-button"><?php _e( 'Remove', 'briar' ); ?></div>
 					</div>
 					<div class="fields"<# if ( !data.editing ) { #> style="display: none"<# } #>>
 						<input type="hidden" class="css-class"<# if ( data.css_class ) { #> value="{{ data.css_class }}"<# } #>>
@@ -306,25 +306,25 @@ class sj_Social_Buttons_Control extends WP_Customize_Control {
 							<?php
 						endforeach;
 						?>
-							<option value="custom"<# if ( data.social == 'custom' ) { #> selected="selected"<# } #>><?php _e( 'Custom', 'sj' ); ?></option>
+							<option value="custom"<# if ( data.social == 'custom' ) { #> selected="selected"<# } #>><?php _e( 'Custom', 'briar' ); ?></option>
 						</select>
 						<br /><br />
 						<div class="custom-social"<# if ( data.social != 'custom' ) { #>  style="display: none"<# } #>>
-							<input type="text" placeholder="<?php echo esc_attr( __( 'Social Network Name', 'sj' ) ); ?>"<# if ( data.social_value ) { #> value="{{ data.social_value }}"<# } #> />
+							<input type="text" placeholder="<?php echo esc_attr( __( 'Social Network Name', 'briar' ) ); ?>"<# if ( data.social_value ) { #> value="{{ data.social_value }}"<# } #> />
 							<br /><br />
 						</div>
-						<input type="text" placeholder="<?php echo esc_attr( __( 'URL', 'sj' ) ); ?>" class="url"<# if ( data.url ) { #> value="{{ data.url }}"<# } #> />
+						<input type="text" placeholder="<?php echo esc_attr( __( 'URL', 'briar' ) ); ?>" class="url"<# if ( data.url ) { #> value="{{ data.url }}"<# } #> />
 					</div>
 				</div>
 			</script>
 			<div class="actions">
-				<a href="javascript:void(null)" class="button add-social-button"><?php _e( 'New Social Button', 'sj' ); ?></a>
+				<a href="javascript:void(null)" class="button add-social-button"><?php _e( 'New Social Button', 'briar' ); ?></a>
 			</div>
 			<br />
 			<div class="social-buttons"></div>
 			<br />
 			<div class="actions">
-				<a href="javascript:void(null)" class="button add-social-button"><?php _e( 'New Social Button', 'sj' ); ?></a>
+				<a href="javascript:void(null)" class="button add-social-button"><?php _e( 'New Social Button', 'briar' ); ?></a>
 			</div>
 		</div>
 		<?php

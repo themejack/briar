@@ -15,7 +15,7 @@ get_header(); ?>
 
 	<?php if ( has_post_thumbnail() ) : ?>
 	<div class="hero-subheader">
-		<?php sj_post_thumbnail(); ?>
+		<?php briar_post_thumbnail(); ?>
 
 		<div class="hero-subheader__content">
 			<div class="outer">
@@ -33,11 +33,11 @@ get_header(); ?>
 	<div class="page-content">
 		<div class="container">
 			<div class="row">
-				<div class="<?php sj_main_class(); ?>">
+				<div class="<?php briar_main_class(); ?>">
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-					<?php sj_link_pages(); ?>
+					<?php briar_link_pages(); ?>
 
 					<?php // If comments are open or we have at least one comment, load up the comment template
 						if ( comments_open() || '0' != get_comments_number() ) : ?>
