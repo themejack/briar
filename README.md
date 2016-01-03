@@ -78,13 +78,13 @@ In this theme we are using a default [WordPress template hierarchy](http://codex
 
 **/js/** - Theme javascript files.
 
-**/languages/** - There is a language file that you can use to translate theme on your language. About WordPress translating you can read here - [Translating WordPress](http://codex.wordpress.org/Translating_WordPress).
-
-**/source/** - Source less and javascript files.
-
-## License
-
+# License
+---------------
 All contents of this theme are licensed under the [MIT license](https://github.com/themejack/briar/blob/master/LICENSE), except FitVids which is licensed under the [WTFPL license](http://sam.zoy.org/wtfpl/) and FontAwesome which is licensed under the [SIL Open Font License](http://scripts.sil.org/OFL).
+
+# Change log
+---------------
+All notable changes to this theme are documented in [CHANGELOG.md](https://github.com/themejack/briar/blob/master/CHANGELOG.md) file.
 
 [![Slicejack](http://slicejack.com/shared/briar-footer.png "Slicejack")](http://slicejack.com "Slicejack")
 

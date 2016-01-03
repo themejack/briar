@@ -7,6 +7,7 @@
  * @package Briar
  * @since 1.0
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -20,19 +21,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="<?php echo esc_url( $browsehappy_url ); ?>">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-
 <?php
-	$header_classes = array( 'header', 'header--borders' );
-	if ( is_single() && has_post_thumbnail() )
-		$header_classes[] = 'header--transparent';
+$header_classes = array( 'header', 'header--borders' );
+if ( is_single() && has_post_thumbnail() ) {
+	$header_classes[] = 'header--transparent';
+}
 ?>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'briar' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'briar' ); ?></a>
 
-	<header class="<?php echo join( ' ', $header_classes ); ?>" role="banner">
+	<header class="<?php echo esc_attr( join( ' ', $header_classes ) ); ?>" role="banner">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -49,7 +47,7 @@
 								'container' => false,
 								'menu_class' => 'dropdown-nav animated bounceOut',
 								'item_class' => 'dropdown-nav__item',
-								'link_class' => 'dropdown-nav__link'
+								'link_class' => 'dropdown-nav__link',
 							) ); ?>
 						</nav>
 					</div><!-- /.header inner -->

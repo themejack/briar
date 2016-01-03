@@ -1,91 +1,207 @@
 {
-    "watch": [
-        {
-            "files": "source/less/**/*.less",
-            "run": ["less"]
-        },
-        {
-            "files": "source/font-awesome/less/*.less",
-            "run": ["less"]
-        },
-        {
-            "files": "source/js/**/*.js",
-            "run": ["js"]
-        }
-    ],
-    "less": {
-        "src": [
-            {
-                "files": [
-                    "source/less/style-default.less"
-                ]
-            },
-            {
-                "files": [
-                    "source/less/style-orange.less"
-                ]
-            },
-            {
-                "files": [
-                    "source/less/style-yellow.less"
-                ]
-            },
-            {
-                "files": [
-                    "source/less/style-blue.less"
-                ]
-            },
-            {
-                "files": [
-                    "source/less/style-violet.less"
-                ]
-            },
-            {
-                "files": [
-                    "source/less/style-green.less"
-                ]
-            }
-        ],
-        "dest": [
-            {
-                "dir": "css/",
-                "name": "style"
-            },
-            {
-                "dir": "css/",
-                "name": "style-orange"
-            },
-            {
-                "dir": "css/",
-                "name": "style-yellow"
-            },
-            {
-                "dir": "css/",
-                "name": "style-blue"
-            },
-            {
-                "dir": "css/",
-                "name": "style-violet"
-            },
-            {
-                "dir": "css/",
-                "name": "style-green"
-            }
-        ]
-    },
-    "js": {
-        "src": [
-            {
-                "files": [
-                    "source/js/scripts.js"
-                ]
-            }
-        ],
-        "dest": [
-            {
-                "dir": "js/",
-                "name": "scripts"
-            }
-        ]
-    }
+	"watch": [
+		{
+			"files": "source/less/**/*.less",
+			"run": ["less"]
+		},
+		{
+			"files": "source/font-awesome/less/*.less",
+			"run": ["less"]
+		},
+		{
+			"files": "source/admin/less/**/*.less",
+			"run": ["less"]
+		},
+		{
+			"files": "source/js/**/*.js",
+			"run": ["js"]
+		},
+		{
+			"files": "source/admin/js/**/*.js",
+			"run": ["js"]
+		}
+	],
+	"less": {
+		"src": [
+			{
+				"files": [
+					"source/less/style.less"
+				]
+			},
+			{
+				"files": [
+					"source/less/style-red.less"
+				]
+			},
+			{
+				"files": [
+					"source/less/style-orange.less"
+				]
+			},
+			{
+				"files": [
+					"source/less/style-yellow.less"
+				]
+			},
+			{
+				"files": [
+					"source/less/style-blue.less"
+				]
+			},
+			{
+				"files": [
+					"source/less/style-violet.less"
+				]
+			},
+			{
+				"files": [
+					"source/less/style-green.less"
+				]
+			},
+			{
+				"files": [
+					"source/admin/less/briar-customize-control-color-scheme.less"
+				]
+			},
+			{
+				"files": [
+					"source/admin/less/briar-customize-control-layout.less"
+				]
+			},
+			{
+				"files": [
+					"source/admin/less/briar-customize-control-social-buttons.less"
+				]
+			},
+			{
+				"files": [
+					"source/admin/less/briar-editor.less"
+				]
+			}
+		],
+		"dest": [
+			{
+				"dir": "css/",
+				"name": "style"
+			},
+			{
+				"dir": "css/",
+				"name": "style-red"
+			},
+			{
+				"dir": "css/",
+				"name": "style-orange"
+			},
+			{
+				"dir": "css/",
+				"name": "style-yellow"
+			},
+			{
+				"dir": "css/",
+				"name": "style-blue"
+			},
+			{
+				"dir": "css/",
+				"name": "style-violet"
+			},
+			{
+				"dir": "css/",
+				"name": "style-green"
+			},
+			{
+				"dir": "admin/css/",
+				"name": "briar-customize-control-color-scheme"
+			},
+			{
+				"dir": "admin/css/",
+				"name": "briar-customize-control-layout"
+			},
+			{
+				"dir": "admin/css/",
+				"name": "briar-customize-control-social-buttons"
+			},
+			{
+				"dir": "admin/css/",
+				"name": "briar-editor"
+			}
+		]
+	},
+	"js": {
+		"src": [
+			{
+				"files": [
+					"source/js/scripts.js"
+				]
+			},
+			{
+				"files": [
+					"source/js/customizer.js"
+				]
+			},
+			{
+				"files": [
+					"source/js/skip-link-focus-fix.js"
+				]
+			},
+			{
+				"files": [
+					"source/admin/js/briar-customize-control-color-scheme.js"
+				]
+			},
+			{
+				"files": [
+					"source/admin/js/briar-customize-control-layout.js"
+				]
+			},
+			{
+				"files": [
+					"source/admin/js/briar-customize-control-social-buttons.js"
+				]
+			},
+			{
+				"files": [
+					"source/admin/js/briar-tinymce.plugins.googlefonts.js"
+				]
+			},
+			{
+				"files": [
+					"source/admin/js/briar-less.js"
+				]
+			}
+		],
+		"dest": [
+			{
+				"dir": "js/",
+				"name": "scripts"
+			},
+			{
+				"dir": "js/",
+				"name": "customizer"
+			},
+			{
+				"dir": "js/",
+				"name": "skip-link-focus-fix"
+			},
+			{
+				"dir": "admin/js/",
+				"name": "briar-customize-control-color-scheme"
+			},
+			{
+				"dir": "admin/js/",
+				"name": "briar-customize-control-layout"
+			},
+			{
+				"dir": "admin/js/",
+				"name": "briar-customize-control-social-buttons"
+			},
+			{
+				"dir": "admin/js/",
+				"name": "briar-tinymce.plugins.googlefonts"
+			},
+			{
+				"dir": "admin/js/",
+				"name": "briar-less"
+			}
+		]
+	}
 }

@@ -12,7 +12,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1><?php printf( __( 'Search Results for: %s', 'briar' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1><?php printf( esc_html__( 'Search Results for: %s', 'briar' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 		</div><!-- /.container -->
