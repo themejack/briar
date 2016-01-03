@@ -19,7 +19,7 @@ function briar_jetpack_setup() {
 		'container' => 'content',
 		'footer' => false,
 		'posts_per_page' => get_option( 'posts_per_page', 10 ),
-		'click_handle' => false
+		'click_handle' => false,
 	) );
 }
 add_action( 'after_setup_theme', 'briar_jetpack_setup' );

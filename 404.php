@@ -12,9 +12,10 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="animated infinite pulse"><?php _e( '404', 'briar' ); ?></h2>
+					<h2 class="animated infinite pulse"><?php esc_html_e( '404', 'briar' ); ?></h2>
 
-					<p><?php printf( __( 'It\'s looking like you may have taken a wrong turn. <br> Don\'t worry, it happens to the best of us. <br> Now you can go back to <a href="%1$s">homepage</a>.', 'briar' ), get_home_url() ); ?></p>
+					<?php /* translators: %s is home page url */ ?>
+					<p><?php printf( wp_kses( __( 'It\'s looking like you may have taken a wrong turn. <br> Don\'t worry, it happens to the best of us. <br> Now you can go back to <a href="%s">homepage</a>.', 'briar' ), array( 'a' => array( 'href' => true ) ) ), esc_url( get_home_url() ) ); ?></p>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 		</div><!-- /.container -->

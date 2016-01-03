@@ -5,6 +5,7 @@
  * @package Briar
  * @since 1.0
  */
+
 ?>
 
 <div <?php post_class( array( 'post-item', 'clearfix' ) ); ?>>

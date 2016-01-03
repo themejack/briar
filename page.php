@@ -37,10 +37,14 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
-					<?php briar_link_pages(); ?>
+					<?php wp_link_pages( array(
+						'before' => '<ul class="pagination">',
+						'after' => '</ul>',
+						'separator' => '',
+					) ); ?>
 
-					<?php // If comments are open or we have at least one comment, load up the comment template
-						if ( comments_open() || '0' != get_comments_number() ) : ?>
+					<?php // If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || '0' !== get_comments_number() ) : ?>
 					<div class="single-comments">
 						<?php comments_template(); ?>
 					</div>
@@ -54,6 +58,6 @@ get_header(); ?>
 
 	<?php get_template_part( 'fixed-footer', get_post_format() ); ?>
 
-	<?php endwhile; // end of the loop.
+	<?php endwhile; // End of the loop.
 
 get_footer();

@@ -26,10 +26,15 @@ add_filter( 'wp_page_menu_args', 'briar_page_menu_args' );
  * Add class to main nav items
  *
  * @see https://developer.wordpress.org/reference/hooks/nav_menu_css_class/
+ * @param array  $classes The CSS classes that are applied to the menu item's <code>&lt;li&gt;</code> element.
+ * @param object $item The current menu item.
+ * @param array  $args An array of wp_nav_menu() arguments.
+ * @param int    $depth Depth of menu item. Used for padding.
  */
 function briar_nav_menu_css_class( $classes, $item, $args, $depth ) {
-	if ( isset( $args->item_class ) )
+	if ( isset( $args->item_class ) ) {
 		$classes[] = $args->item_class;
+	}
 
 	return $classes;
 }
@@ -39,10 +44,15 @@ add_filter( 'nav_menu_css_class', 'briar_nav_menu_css_class', 10, 4 );
  * Add class to main nav links
  *
  * @see https://developer.wordpress.org/reference/hooks/nav_menu_link_attributes/
+ * @param array  $atts The HTML attributes applied to the menu item's <code>&lt;a&gt;</code> element, empty strings are ignored.
+ * @param object $item The current menu item.
+ * @param array  $args An array of wp_nav_menu() arguments.
+ * @param int    $depth Depth of menu item. Used for padding.
  */
 function briar_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
-	if ( isset( $args->link_class ) )
+	if ( isset( $args->link_class ) ) {
 		$atts['class'] = $args->link_class;
+	}
 
 	return $atts;
 }
@@ -52,6 +62,7 @@ add_filter( 'nav_menu_link_attributes', 'briar_nav_menu_link_attributes', 10, 4 
  * Change read more link class
  *
  * @see https://developer.wordpress.org/reference/hooks/the_content_more_link/
+ * @param string $link Read More link element.
  */
 function briar_the_content_more_link( $link ) {
 	return str_replace( '"more-link"', '"post-item__btn btn--transition"', $link );
@@ -68,87 +79,21 @@ add_filter( 'the_content_more_link', 'briar_the_content_more_link', 10, 1 );
  */
 function briar_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() )
+	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
 
-	if ( is_customize_preview() )
+	if ( is_customize_preview() ) {
 		$classes[] = 'customize-preview';
+	}
 
-	if ( is_singular() && has_post_thumbnail() )
+	if ( is_singular() && has_post_thumbnail() ) {
 		$classes[] = 'single--featured';
+	}
 
 	return $classes;
 }
 add_filter( 'body_class', 'briar_body_classes' );
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function briar_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name.
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary.
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'briar' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'briar_wp_title', 10, 2 );
-
-	/**
-	 * Title shim for sites older than WordPress 4.1.
-	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
-	 */
-	function briar_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'briar_render_title' );
-endif;
-
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @since 1.0
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function briar_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) )
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-}
-add_action( 'wp', 'briar_setup_author' );
 
 /**
  * Returns sidebar position
@@ -170,36 +115,45 @@ function briar_get_layout() {
 
 	$accepted_layouts = array( 'none', 'left', 'right' );
 
-	if ( is_front_page() && 'page' == get_option( 'show_on_front' ) )
+	if ( is_front_page() && 'page' === get_option( 'show_on_front' ) ) {
 		$briar_layout = $briar_home_layout;
-
-	if ( is_home() ) {
-		if ( 'page' == get_option( 'show_on_front' ) )
-			$briar_layout = $briar_blog_layout;
-		else
-			$briar_layout = $briar_home_layout;
 	}
 
-	if ( is_archive() )
+	if ( is_home() ) {
+		if ( 'page' === get_option( 'show_on_front' ) ) {
+			$briar_layout = $briar_blog_layout;
+		} else {
+			$briar_layout = $briar_home_layout;
+		}
+	}
+
+	if ( is_archive() ) {
 		$briar_layout = $briar_archive_layout;
+	}
 
-	if ( is_category() )
+	if ( is_category() ) {
 		$briar_layout = $briar_category_archive_layout;
+	}
 
-	if ( is_search() )
+	if ( is_search() ) {
 		$briar_layout = $briar_search_layout;
+	}
 
-	if ( is_404() )
+	if ( is_404() ) {
 		$briar_layout = $briar_404_layout;
+	}
 
-	if ( is_single() )
+	if ( is_single() ) {
 		$briar_layout = $briar_single_layout;
+	}
 
-	if ( is_page() )
+	if ( is_page() ) {
 		$briar_layout = $briar_page_layout;
+	}
 
-	if ( ! in_array( $briar_layout, $accepted_layouts ) )
+	if ( ! in_array( $briar_layout, $accepted_layouts ) ) {
 		$briar_layout = $briar_global_layout;
+	}
 
 	return $briar_layout;
 }
@@ -218,25 +172,26 @@ function briar_main_class( $echo = true ) {
 
 	if ( is_customize_preview() ) {
 		$classes = array( 'col-md-12' , 'briar-main-class' );
-	}
-	else {
-		if ( $layout == 'none' ) {
-			if ( is_single() )
+	} else {
+		if ( 'none' === $layout ) {
+			if ( is_single() ) {
 				$classes[] = 'col-lg-8 col-md-10 col-lg-offset-2 col-md-offset-1';
-			else
+			} else {
 				$classes[] = 'col-md-12';
-		}
-		else {
+			}
+		} else {
 			$classes[] = 'col-md-8';
-			if ( $layout == 'left' )
+			if ( 'left' === $layout ) {
 				$classes[] = 'col-md-push-4';
+			}
 		}
 	}
 
-	if ( $echo )
-		echo join( ' ', $classes );
-	else
+	if ( $echo ) {
+		echo esc_attr( join( ' ', $classes ) );
+	} else {
 		return $classes;
+	}
 }
 
 /**
@@ -244,6 +199,7 @@ function briar_main_class( $echo = true ) {
  *
  * @since 1.0
  *
+ * @param bool $echo Echo or not.
  * @return false|array Null if layout is 'none', otherwise array.
  */
 function briar_sidebar_class( $echo = false ) {
@@ -252,36 +208,53 @@ function briar_sidebar_class( $echo = false ) {
 
 	if ( is_customize_preview() ) {
 		$classes = array( 'col-md-4', 'briar-sidebar-class' );
-	}
-	else {
-		if ( $layout == 'none' )
+	} else {
+		if ( 'none' === $layout ) {
 			return false;
-		else {
+		} else {
 			$classes[] = 'col-md-4';
-			if ( $layout == 'left' )
+			if ( 'left' === $layout ) {
 				$classes[] = 'col-md-pull-8';
+			}
 		}
 	}
 
-	if ( $echo )
-		echo join( ' ', $classes );
-	else
+	if ( $echo ) {
+		echo esc_attr( join( ' ', $classes ) );
+	} else {
 		return $classes;
+	}
 }
 
 /**
- * Filters post thumbnail size to get a bigger thumbnail if layout is set to 'none'
+ * Filter wp_link_pages links
  *
- * @since 1.0
+ * @since 1.1
  *
- * @param string $size Default post thumbnail size
+ * @param  string $link wp_links_pages link.
+ * @param  int    $i number.
  * @return string
  */
-function briar_post_thumbnail_size( $size ) {
-	if ( $size == 'blog-post-image' && briar_get_layout() == 'none' )
-		$size = 'full-width-blog-post-image';
+function briar_wp_link_pages_link( $link, $i ) {
+	global $page, $multipage, $more;
 
-	return $size;
+	if ( $multipage ) {
+		return '<li' . ( $i === $page || ! $more && 1 === $page ? ' class="current"' : '' ) .'>' . trim( $link ) . '</li>';
+	}
+
+	return $link;
 }
-add_filter( 'post_thumbnail_size', 'briar_post_thumbnail_size', 10, 1 );
+add_filter( 'wp_link_pages_link', 'briar_wp_link_pages_link', 10, 2 );
 
+/**
+ * Allow display and border-radius
+ * @param  array $allowed_attr Allowed attributes.
+ * @return array
+ */
+function briar_safe_style_css( $allowed_attr ) {
+	$allowed_attr[] = 'display';
+	$allowed_attr[] = 'border-radius';
+
+	return $allowed_attr;
+}
+add_filter( 'safe_style_css', 'briar_safe_style_css', 10, 1 );
