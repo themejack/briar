@@ -94,7 +94,7 @@ if ( ! function_exists( 'briar_social_icons' ) ) :
 			?>
 			<li class="<?php echo esc_attr( $social_button['css_class'] . '-ico social-nav__item btn--transition' ); ?>">
 				<a class="social-nav__link" href="<?php echo esc_url( $social_button['url'] ); ?>" title="<?php echo esc_attr( isset( $social_buttons_default_titles[ $social_button['social'] ] ) ? $social_buttons_default_titles[ $social_button['social'] ] : $social_button['social'] ); ?>" target="_blank">
-					<i class="fa <?php if ( isset( $fa_classes[ strtolower( $social_button['social'] ) ] ) ) : echo esc_attr( $fa_classes[ strtolower( $social_button['social'] ) ] ); else : ?><?php echo esc_attr( 'fa-' . strtolower( $social_button['social'] ) ); ?><?php endif; ?>"></i>
+					<i class="fa <?php if ( isset( $fa_classes[ strtolower( $social_button['social'] ) ] ) ) : echo esc_attr( $fa_classes[ strtolower( $social_button['social'] ) ] ); else : ?><?php echo esc_attr( 'fa-' . $social_button['css_class'] ); ?><?php endif; ?>"></i>
 				</a>
 			</li>
 			<?php
@@ -176,6 +176,7 @@ if ( ! function_exists( 'briar_posted_on' ) ) :
 if ( ! function_exists( 'briar_share_buttons' ) ) :
 	/**
 	 * Display share buttons.
+	 *
 	 * @param array $classes Optional, additional classes.
 	 * @since 1.0
 	 */
@@ -218,14 +219,14 @@ if ( ! function_exists( 'briar_share_buttons' ) ) :
 			'stumbleupon' => __( 'Stumble', 'briar' ),
 		);
 
-		$urlCurl = get_template_directory_uri() . '/inc/sharrre.php';
+		$sharrre_url = get_template_directory_uri() . '/inc/sharrre.php';
 
 		if ( is_customize_preview() ) {
 			$briar_share_buttons = array();
 		}
 
 		?>
-		<div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>" data-url="<?php echo esc_url( $share_url ); ?>" data-text="<?php echo esc_attr( $share_text ); ?>" data-media="<?php echo esc_url( $share_media ); ?>" data-urlcurl="<?php echo esc_url( $urlCurl ); ?>" data-via="<?php echo esc_attr( $share_via ); ?>">
+		<div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>" data-url="<?php echo esc_url( $share_url ); ?>" data-text="<?php echo esc_attr( $share_text ); ?>" data-media="<?php echo esc_url( $share_media ); ?>" data-urlcurl="<?php echo esc_url( $sharrre_url ); ?>" data-via="<?php echo esc_attr( $share_via ); ?>">
 		<?php foreach ( $briar_share_buttons as $network ) :
 			if ( isset( $share_buttons[ $network ] ) ) : ?>
 			<div class="briar-share-button" data-network="<?php echo esc_attr( $network ); ?>" data-title="<?php echo esc_attr( $share_buttons[ $network ] ); ?>"><a class="box" href="javascript:void(null)"><div class="share-icon"></div><div class="count" href="javascript:void(null)">-</div></a></div>

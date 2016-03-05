@@ -1,6 +1,12 @@
 # Mac.
 .DS_STORE
 
+# CSS & JS folders
+/source
+gulpfile.js
+package.json
+settings.json
+
 # Node.
-node_modules
+/node_modules
 npm-debug.log

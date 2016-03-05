@@ -49,7 +49,7 @@
 		value.bind( function( to ) {
 			var social_buttons = '';
 			$.each( to, function( i, social_button ) {
-				social_buttons += '<li class="' + social_button.css_class + '-ico social-nav__item btn--transition"><a class="social-nav__link" href="' + social_button.url + '" title="' + social_button.social + '" target="_blank"><i class="fa fa-' + ( social_button.social + '' ).toLowerCase() + '"></i></a></li>\n';
+				social_buttons += '<li class="' + social_button.css_class + '-ico social-nav__item btn--transition"><a class="social-nav__link" href="' + social_button.url + '" title="' + social_button.social + '" target="_blank"><i class="fa fa-' + social_button.css_class + '"></i></a></li>\n';
 			} );
 
 			$( '#footer ul.social-nav' ).html( social_buttons );
