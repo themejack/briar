@@ -1,6 +1,12 @@
 # Mac.
 .DS_STORE
 
+# CSS & JS folders
+/css
+/js
+/admin/css
+/admin/js
+
 # Node.
 node_modules
 npm-debug.log
