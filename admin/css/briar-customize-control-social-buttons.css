@@ -5,19 +5,23 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .customize-control-social-buttons .social-buttons .social-button {
   display: inline-block;
   width: 100%;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview {
   float: none;
   padding: 10px;
   height: 48px;
   background: #fafafa;
   border-color: #999;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div {
   float: left;
   text-indent: -9999px;
@@ -27,11 +31,13 @@
   position: relative;
   cursor: pointer;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview {
   width: 55%;
   line-height: 28px;
   color: #292929;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icon {
   display: block;
   float: left;
@@ -48,16 +54,20 @@
   -moz-border-radius: 50%;
   position: relative;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-value {
   float: left;
   text-indent: 10px;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview:hover > .social-icon {
   background-color: #ff2400;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview:hover > .social-value {
   color: #ff2400;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div:before {
   display: inline-block;
   position: absolute;
@@ -70,72 +80,94 @@
   -moz-osx-font-smoothing: grayscale;
   text-indent: 0;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div:hover {
   color: #ff2400;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.move-down:before {
   content: '\f347';
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.move-up:before {
   content: '\f343';
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.remove-button:before {
   content: "\f158";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icon:before {
   font-family: FontAwesome;
   color: #fff;
   text-indent: 0;
   display: block;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--dribbble:before {
   content: "\f17d";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--delicious:before {
   content: "\f1a5";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--digg:before {
   content: "\f1a6";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--facebook:before {
   content: "\f09a";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--flickr:before {
   content: "\f16e";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--github:before {
   content: "\f113";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--googleplus:before {
   content: "\f0d5";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--instagram:before {
   content: "\f16d";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--linkedin:before {
   content: "\f0e1";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--pinterest:before {
   content: "\f0d2";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--stumbleupon:before {
   content: "\f1a4";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--skype:before {
   content: "\f17e";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--twitter:before {
   content: "\f099";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--tumblr:before {
   content: "\f173";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--vimeo:before {
   content: "\f194";
 }
+
 .customize-control-social-buttons .social-buttons .social-button .preview > div.social-button-preview > .social-icons--behance:before {
   content: "\f1b4";
 }
+
 .customize-control-social-buttons .social-buttons .social-button:first-of-type .preview > div.move-up,
 .customize-control-social-buttons .social-buttons .social-button:first-of-type .preview > div.move-up:hover,
 .customize-control-social-buttons .social-buttons .social-button:last-of-type .preview > div.move-down,
@@ -143,6 +175,7 @@
   cursor: default !important;
   color: #d5d5d5 !important;
 }
+
 .customize-control-social-buttons .social-buttons .social-button .fields {
   padding: 10px;
   line-height: 0.5;

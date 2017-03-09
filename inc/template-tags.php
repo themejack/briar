@@ -309,6 +309,52 @@ function briar_post_thumbnail() {
 }
 
 /**
+ * If mbstring extension is not loaded then we use preg_replace function.
+ *
+ * @param string $pattern Search pattern.
+ * @param string $replacement Replacement.
+ * @param string $string String.
+ * @return string
+ */
+function briar_mb_ereg_replace( $pattern, $replacement, $string ) {
+	if ( extension_loaded( 'mbstring' ) ) {
+		return mb_ereg_replace( $pattern, $replacement, $string );
+	}
+
+	return preg_replace( $pattern, $replacement, $string );
+}
+
+/**
+ * If mbstring extension is not loaded then we use strlen function.
+ *
+ * @param string $string String.
+ * @return integer
+ */
+function briar_mb_strlen( $string ) {
+	if ( extension_loaded( 'mbstring' ) ) {
+		return mb_strlen( $string );
+	}
+
+	return strlen( $string );
+}
+
+/**
+ * If mbstring extension is not loaded then use we substr function.
+ *
+ * @param string $string String.
+ * @param integer $start Substring start.
+ * @param integer $length Substring length.
+ * @return string
+ */
+function briar_mb_substr( $string, $start, $length ) {
+	if ( extension_loaded( 'mbstring' ) ) {
+		return mb_substr( $string, $start, $length );
+	}
+
+	return substr( $string, $start, $length );
+}
+
+/**
  * Display a post content
  *
  * @since 1.0
@@ -326,16 +372,16 @@ function briar_post_content() {
 		}
 
 		$read_more = false;
-		$content = trim( mb_ereg_replace( '\s+', ' ', $content ) );
+		$content = trim( briar_mb_ereg_replace( '\s+', ' ', $content ) );
 
 		$max_chars = 130;
 		if ( in_array( 'col-md-12', $main_classes ) ) {
 			$max_chars = 280;
 		}
 
-		if ( mb_strlen( $content ) > $max_chars ) {
+		if ( briar_mb_strlen( $content ) > $max_chars ) {
 			$read_more = true;
-			$content = mb_substr( $content, 0, $max_chars ) . '...';
+			$content = briar_mb_substr( $content, 0, $max_chars ) . '...';
 		}
 
 		echo wp_kses( apply_filters( 'the_content', $content ), $allowedposttags );

@@ -155,6 +155,7 @@ add_action( 'admin_enqueue_scripts', 'briar_admin_scripts' );
  * @since 1.1
  */
 function briar_add_editor_styles() {
+	add_editor_style( '//fonts.googleapis.com/css?family=' . urlencode( 'Martel:300,400,700,900|Noto+Sans:400,400i,700,700i' ) );
 	add_editor_style( get_template_directory_uri() . '/admin/css/briar-editor.css' );
 }
 add_action( 'admin_init', 'briar_add_editor_styles' );
@@ -172,7 +173,7 @@ function add_tinymce_googlefonts( $plugins ) {
 	return $plugins;
 
 }
-add_filter( 'mce_external_plugins', 'add_tinymce_googlefonts' );
+//add_filter( 'mce_external_plugins', 'add_tinymce_googlefonts' );
 
 /**
  * Enqueue scripts and styles.
@@ -194,45 +195,17 @@ function briar_scripts() {
 		$theme_style = 'red';
 	}
 
-	wp_enqueue_style( 'briar-style', get_template_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'briar-fonts', '//fonts.googleapis.com/css?family=Martel:300,400,700,900|Noto+Sans:400,400i,700,700i' );
+	wp_enqueue_style( 'briar-style', get_template_directory_uri() . '/css/style.css', array( 'briar-fonts' ) );
 	wp_enqueue_style( 'briar-style-' . $theme_style, get_template_directory_uri() . '/css/style' . $styles[ $theme_style ] . '.css', array( 'briar-style' ) );
 
-	wp_enqueue_script( 'briar-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'briar-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20150610', true );
+	wp_enqueue_script( 'briar-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20170309', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'briar_scripts' );
-
-/**
- * Import fonts
- */
-function briar_fonts() {
-?>
-	<script type="text/javascript">
-		WebFontConfig = {
-			google: {
-				families: [ 'Noto+Sans:400,700,400italic,700italic:latin,latin-ext', 'Martel:400,300,700,900:latin,latin-ext' ]
-			},
-			active: function() {
-				document.dispatchEvent( new Event( 'resize' ) );
-			}
-		};
-
-		( function() {
-			var wf = document.createElement('script');
-			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.jsdelivr.net/webfontloader/1.6.15/webfontloader.js';
-			wf.type = 'text/javascript';
-			wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(wf, s);
-		} )();
-	</script>
-<?php
-}
-add_action( 'wp_head', 'briar_fonts', 0 );
 
 /**
  * Add custom style

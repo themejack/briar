@@ -1,0 +1,98 @@
+{
+    "watch": [
+        {
+            "files"    : "source/less/**/*.less",
+            "build" : { "less" : "default" }
+        },
+				{
+            "files"    : "source/font-awesome/less/**/*.less",
+            "build" : { "less" : "default" }
+        },
+				{
+            "files"    : "source/admin/less/**/*.less",
+            "build" : { "less" : "admin" }
+        },
+        {
+            "files"   : "source/js/scripts.js",
+            "build" : { "js" : "default" }
+        },
+        {
+            "files"   : "source/js/customizer.js",
+            "build" : { "js" : "customizer" }
+        },
+        {
+            "files"    : "source/admin/js/**/*.js",
+            "build" : { "js" : "admin" }
+        }
+    ],
+    "build": {
+        "less": {
+            "default": {
+								"source/less/style.less": [
+                    "css"
+                ],
+								"source/less/style-red.less": [
+                    "css"
+                ],
+								"source/less/style-orange.less": [
+                    "css"
+                ],
+								"source/less/style-yellow.less": [
+                    "css"
+                ],
+								"source/less/style-blue.less": [
+                    "css"
+                ],
+								"source/less/style-violet.less": [
+                    "css"
+                ],
+								"source/less/style-green.less": [
+                    "css"
+                ]
+            },
+            "admin": {
+                "source/admin/less/briar-customize-control-color-scheme.less": [
+                    "admin/css"
+                ],
+                "source/admin/less/briar-customize-control-layout.less": [
+                    "admin/css"
+                ],
+                "source/admin/less/briar-customize-control-social-buttons.less": [
+                    "admin/css"
+                ],
+                "source/admin/less/briar-editor.less": [
+                    "admin/css"
+                ]
+            }
+        },
+        "js": {
+            "default": {
+                "source/js/scripts.js": [
+                    "js"
+                ]
+            },
+            "customizer": {
+                "source/js/customizer.js": [
+                    "js"
+                ]
+            },
+            "admin": {
+                "source/admin/js/briar-customize-control-color-scheme.js": [
+                    "admin/js"
+                ],
+                "source/admin/js/briar-customize-control-layout.js": [
+                    "admin/js"
+                ],
+                "source/admin/js/briar-customize-control-social-buttons.js": [
+                    "admin/js"
+                ],
+								"source/admin/js/briar-tinymce.plugins.googlefonts.js": [
+                    "admin/js"
+                ],
+                "source/admin/js/briar-less.js": [
+                    "admin/js"
+                ]
+            }
+        }
+    }
+}

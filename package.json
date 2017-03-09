@@ -1,0 +1,35 @@
+{
+  "name": "briar",
+  "version": "1.1.10",
+  "description": "Briar, minimalist free WordPress theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "gulp": "node ./node_modules/gulp/bin/gulp.js",
+    "build": "npm run gulp build",
+    "build:all": "npm run gulp build:all",
+    "watch": "npm run gulp watch",
+    "zip": "npm run gulp zip",
+    "makepot": "npm run gulp makepot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/themejack/briar.git"
+  },
+  "author": "Themejack",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
+    "gulp-include": "^2.3.1",
+    "gulp-less": "^3.3.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-touch": "^1.0.1",
+    "gulp-util": "^3.0.8",
+    "gulp-wp-pot": "^2.0.3",
+    "gulp-zip": "^4.0.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-group-css-media-queries": "^1.1.1",
+    "through2": "^2.0.3"
+  }
+}

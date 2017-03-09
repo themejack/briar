@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.10] - 2017-03-09
+### Added
+- .pot file
+
+### Changed
+- Merge master and dev branch
+- Updated gulp script
+- Fonts loading moved from js to stylesheet import
+
+### Fixed
+- Missing mbstring extension PHP bug
+
 ## [1.1.9] - 2016-03-05
 ### Fixed
 - Fix Footer custom social icon bug

@@ -6,9 +6,11 @@
   box-sizing: border-box;
   opacity: 0.4;
 }
+
 .customize-control-layout .selection .layout.selected {
   opacity: 1;
 }
+
 .customize-control-layout .selection .layout .icon {
   position: relative;
   width: 100%;
@@ -19,6 +21,7 @@
   background-position: 0 0;
   background-repeat: no-repeat;
 }
+
 .customize-control-layout .selection .layout[data-value="disabled"] .icon:after {
   position: absolute;
   display: block;
@@ -29,16 +32,20 @@
   left: 0;
   background: url(../img/disabled.png) center center no-repeat;
 }
+
 .customize-control-layout .selection .layout[data-value="none"] .icon,
 .customize-control-layout .selection .layout[data-value="disabled"] .icon {
   background-image: url(../img/none.png);
 }
+
 .customize-control-layout .selection .layout[data-value="left"] .icon {
   background-image: url(../img/left.png);
 }
+
 .customize-control-layout .selection .layout[data-value="right"] .icon {
   background-image: url(../img/right.png);
 }
+
 .customize-control-layout .selection .layout.selected .icon {
   cursor: not-allowed;
 }
